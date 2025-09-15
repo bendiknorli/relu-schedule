@@ -11,6 +11,7 @@ export type Event = {
     type: EventType;
     topic: string;
     subtopics?: string;
+    presenters?: string;
 };
 
 export type WeekGroup = {
@@ -24,6 +25,7 @@ export interface ScheduleEntry {
     type?: string;
     topic?: string;
     subtopics?: string;
+    presenters?: string;
 }
 
 export interface GoogleSheetsResponse {

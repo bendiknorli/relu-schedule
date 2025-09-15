@@ -26,7 +26,7 @@ const ScheduleGrid: React.FC<ScheduleGridProps> = ({
     return (
         <div className="container py-6">
             <header className="text-center mb-6">
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+                <h1 className="text-2xl font-bold text-gray-900">
                     Education Schedule ReLU NTNU
                 </h1>
                 <p className="text-sm text-gray-500 mt-3">{breadcrumbs}</p>
@@ -50,7 +50,7 @@ const ScheduleGrid: React.FC<ScheduleGridProps> = ({
                     No schedule data available.
                 </div>
             ) : (
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {groups.map((g) => (
                         <WeekCard key={g.week} group={g} />
                     ))}

@@ -103,6 +103,13 @@ function processSheet(values: string[][]): Event[] {
         subtopics: headers.findIndex(
             (h) => h === "subtopics" || h === "subtopic"
         ),
+        presenters: headers.findIndex((h) =>
+            [
+                "paper of the week presenters",
+                "paper presenters",
+                "presenters",
+            ].includes(h)
+        ),
     };
 
     const rows: ScheduleEntry[] = [];
@@ -116,6 +123,8 @@ function processSheet(values: string[][]): Event[] {
             topic: idx.topic >= 0 ? row[idx.topic]?.trim() : undefined,
             subtopics:
                 idx.subtopics >= 0 ? row[idx.subtopics]?.trim() : undefined,
+            presenters:
+                idx.presenters >= 0 ? row[idx.presenters]?.trim() : undefined,
         };
 
         rows.push(entry);
@@ -138,6 +147,7 @@ function processSheet(values: string[][]): Event[] {
         const type = normalizeType(r.type ?? "");
         const topic = (r.topic ?? "").trim();
         const subtopics = (r.subtopics ?? "").trim();
+        const presenters = (r.presenters ?? "").trim();
 
         if (!weekNum || !type || !topic) {
             console.log(
@@ -151,6 +161,7 @@ function processSheet(values: string[][]): Event[] {
             type,
             topic,
             subtopics: subtopics || undefined,
+            presenters: presenters || undefined,
         });
     }
 
@@ -276,13 +287,13 @@ function exportProcessedData(
 
     // Also create a simple table view
     console.log("\n=== SIMPLE TABLE VIEW ===");
-    console.log("Week | Type | Topic | Subtopics");
-    console.log("-----|------|-------|----------");
+    console.log("Week | Type | Topic | Presenters | Subtopics");
+    console.log("-----|------|-------|------------|----------");
     events.forEach((event) => {
         console.log(
             `${event.week} | ${event.type} | ${event.topic} | ${
-                event.subtopics || ""
-            }`
+                (event as any).presenters || ""
+            } | ${event.subtopics || ""}`
         );
     });
 }
