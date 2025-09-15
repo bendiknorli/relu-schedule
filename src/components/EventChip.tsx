@@ -214,13 +214,19 @@ export function EventChip({ event }: { event: Event }) {
                                 <div className="font-semibold">
                                     Paper of the Week Presenters:
                                 </div>
-                                <div>{(event as any).presenters}</div>
+                                <div>
+                                    {renderPresenters(
+                                        (event as any).presenters
+                                    )}
+                                </div>
                             </div>
                         ) : null}
 
                         {/* Then show type + Subtopics label and content */}
                         <div className="font-semibold mt-1">
-                            <span className="italic">{event.type}</span>{" "}
+                            <span className="italic">
+                                {titleCase(event.type)}
+                            </span>{" "}
                             Subtopics:
                         </div>
                         <div>{formatSubtopics(event.subtopics ?? "")}</div>
@@ -237,4 +243,28 @@ function formatSubtopics(text: string) {
         .map((s) => s.trim())
         .filter(Boolean);
     return parts.join("\n");
+}
+
+function renderPresenters(text: string) {
+    const parts = text
+        .split(/;|\n/g)
+        .map((s) => s.trim())
+        .filter(Boolean);
+    return (
+        <>
+            {parts.map((p, i) => (
+                <div key={i}>
+                    <strong>Group {i + 1}:</strong> {p}
+                </div>
+            ))}
+        </>
+    );
+}
+
+function titleCase(input: string) {
+    return input
+        .toLowerCase()
+        .split(/\s+/)
+        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+        .join(" ");
 }
