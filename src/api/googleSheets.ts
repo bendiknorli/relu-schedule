@@ -10,14 +10,8 @@ import {
 const SPREADSHEET_ID = "1dc8Sylk1wYQhdFOhvQqmm1MANii94PKAPjUTh8mb6g8";
 const SHEET_GID = 1788585293; // Sheet 2 in the Google Sheets (0-indexed, so 0 = first sheet, 1 = second sheet, etc.)
 
-function getApiKey() {
-    return import.meta.env.VITE_GOOGLE_SHEETS_API_KEY as string | undefined;
-}
-
 export async function fetchWeekGroups(): Promise<WeekGroup[]> {
     console.log("Starting Google Sheets data fetch...");
-
-    const API_KEY = getApiKey();
 
     try {
         // Method 1: Try CSV export (most reliable for public sheets)
