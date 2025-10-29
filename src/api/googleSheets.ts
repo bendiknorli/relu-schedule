@@ -7,7 +7,7 @@ import {
     type ScheduleEntry,
 } from "../types";
 
-const SPREADSHEET_ID = "1dc8Sylk1wYQhdFOhvQqmm1MANii94PKAPjUTh8mb6g8";
+const SPREADSHEET_ID = "1PLwtDb_ODhWJ8bsQajqDORCa_XWr1FkTKLe795_lr3k";
 const SHEET_GID = 1788585293; // Sheet 2 in the Google Sheets (0-indexed, so 0 = first sheet, 1 = second sheet, etc.)
 
 export async function fetchWeekGroups(): Promise<WeekGroup[]> {
