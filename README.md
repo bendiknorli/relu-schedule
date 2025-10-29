@@ -1,6 +1,8 @@
-# ReLU NTNU — Education Schedule (Fall 2025)
+# ReLU NTNU — Education Schedule
 
 A responsive React + TypeScript application (Vite) that displays the ReLU NTNU education schedule in a calendar-like grid, sourced from Google Sheets.
+
+![demo-image](public/demo-image.png)
 
 ## Features
 
@@ -12,8 +14,8 @@ A responsive React + TypeScript application (Vite) that displays the ReLU NTNU e
 
 ## Data Source
 
--   **Google Sheets Link**: [ReLU NTNU Schedule](https://docs.google.com/spreadsheets/d/1dc8Sylk1wYQhdFOhvQqmm1MANii94PKAPjUTh8mb6g8/edit?gid=1788585293#gid=1788585293)
--   **Spreadsheet ID**: `1dc8Sylk1wYQhdFOhvQqmm1MANii94PKAPjUTh8mb6g8`
+-   **Google Sheets Link**: [ReLU NTNU Schedule](https://docs.google.com/spreadsheets/d/1PLwtDb_ODhWJ8bsQajqDORCa_XWr1FkTKLe795_lr3k/edit?gid=1788585293#gid=1788585293)
+-   **Spreadsheet ID**: `1PLwtDb_ODhWJ8bsQajqDORCa_XWr1FkTKLe795_lr3k`
 -   **Sheet GID**: `1788585293`
 -   **Columns**: Week, Type, Topic, Subtopics (case-insensitive)
 

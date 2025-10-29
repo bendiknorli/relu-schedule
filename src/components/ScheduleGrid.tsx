@@ -27,7 +27,7 @@ const ScheduleGrid: React.FC<ScheduleGridProps> = ({
         <div className="container py-6">
             <header className="text-center mb-6">
                 <h1 className="text-2xl font-bold text-gray-900">
-                    Education Schedule ReLU NTNU
+                    Education Schedule ReLU NTNU Spring 2026
                 </h1>
                 <p className="text-sm text-gray-500 mt-3">{breadcrumbs}</p>
             </header>
