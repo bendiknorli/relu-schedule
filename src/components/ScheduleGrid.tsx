@@ -18,8 +18,8 @@ const ScheduleGrid: React.FC<ScheduleGridProps> = ({
         if (!groups.length) return "";
         const first = groups[0]?.week;
         const last = groups[groups.length - 1]?.week;
-        const a = formatBreadcrumb(2026, first, "en-GB");
-        const b = formatBreadcrumb(2026, last, "en-GB");
+        const a = formatBreadcrumb(first, "en-GB");
+        const b = formatBreadcrumb(last, "en-GB");
         return `• ${a}     —     • ${b}`;
     }, [groups]);
 
