@@ -18,8 +18,8 @@ const ScheduleGrid: React.FC<ScheduleGridProps> = ({
         if (!groups.length) return "";
         const first = groups[0]?.week;
         const last = groups[groups.length - 1]?.week;
-        const a = formatBreadcrumb(2025, first, "en-GB");
-        const b = formatBreadcrumb(2025, last, "en-GB");
+        const a = formatBreadcrumb(2026, first, "en-GB");
+        const b = formatBreadcrumb(2026, last, "en-GB");
         return `• ${a}     —     • ${b}`;
     }, [groups]);
 
@@ -50,7 +50,7 @@ const ScheduleGrid: React.FC<ScheduleGridProps> = ({
                     No schedule data available.
                 </div>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="schedule-weeks-grid">
                     {groups.map((g) => (
                         <WeekCard key={g.week} group={g} />
                     ))}

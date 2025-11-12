@@ -1,20 +1,20 @@
 const DEFAULT_LOCALE = "en-US";
 
+// Week 5 starts on Monday, January 26, 2026
+const WEEK_5_START = new Date(Date.UTC(2026, 0, 26)); // January 26, 2026 (Monday)
+
 export function startOfISOWeek(year: number, week: number): Date {
-    // ISO week: week 1 is the week with Jan 4 and starts on Monday
-    const simple = new Date(Date.UTC(year, 0, 4)); // Jan 4
-    const dayOfWeek = simple.getUTCDay() || 7; // 1..7 (Mon..Sun)
-    const mondayOfWeek1 = new Date(simple);
-    mondayOfWeek1.setUTCDate(simple.getUTCDate() - dayOfWeek + 1);
-    const target = new Date(mondayOfWeek1);
-    target.setUTCDate(mondayOfWeek1.getUTCDate() + (week - 1) * 7);
-    return target;
+    // Custom week calculation: Week 5 = Monday, January 26, 2026
+    const weekOffset = week - 5;
+    const start = new Date(WEEK_5_START);
+    start.setUTCDate(WEEK_5_START.getUTCDate() + weekOffset * 7);
+    return start;
 }
 
 export function endOfISOWeek(year: number, week: number): Date {
     const start = startOfISOWeek(year, week);
     const end = new Date(start);
-    end.setUTCDate(start.getUTCDate() + 6); // Sunday
+    end.setUTCDate(start.getUTCDate() + 6); // Sunday (6 days after Monday start)
     return end;
 }
 

@@ -4,7 +4,7 @@ import { formatRange } from "../lib/dates";
 
 export function WeekCard({ group }: { group: WeekGroup }) {
     const count = group.events.length;
-    const range = formatRange(2025, group.week, "en-GB");
+    const range = formatRange(2026, group.week, "en-GB");
 
     return (
         <div className="week-card">

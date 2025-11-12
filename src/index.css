@@ -339,6 +339,25 @@ body {
 }
 
 /* Custom component styles */
+.schedule-weeks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    gap: 1rem;
+    max-width: 100%;
+}
+
+@media (min-width: 1400px) {
+    .schedule-weeks-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1399px) {
+    .schedule-weeks-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 .week-card {
     background: white;
     border-radius: 1rem;
